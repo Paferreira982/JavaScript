@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var x, a, b;
+        x = parseInt(prompt("Menu:\nDigite uma das opções abaixo:\n1 -  Somar\n2 - Subtrair\n3 - Multiplicar\n4 - Dividir\n5 – Sair\n"));
+        switch (x) {
+            case 1:
+                a = parseInt(prompt("Digite o primeiro valor : "));
+                b = parseInt(prompt("Digite o segundo valor: "));
+                alert("Soma dos valores: " + (a + b));
+                alert("Fim do script");
+                break;
+            case 2:
+                a = parseInt(prompt("Digite o primeiro valor : "));
+                b = parseInt(prompt("Digite o segundo valor: "));
+                alert("Subtração dos valores: " + (a - b));
+                alert("Fim do script");
+                break;
+            case 3:
+                a = parseInt(prompt("Digite o primeiro valor : "));
+                b = parseInt(prompt("Digite o segundo valor: "));
+                alert("Multiplicação dos valores: " + (a * b));
+                alert("Fim do script");
+                break;
+            case 4:
+                a = parseInt(prompt("Digite o primeiro valor : "));
+                b = parseInt(prompt("Digite o segundo valor: "));
+                alert("Divisão dos valores: " + (a / b));
+                alert("Fim do script");
+                break;
+            default:
+                alert("Fim do script");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var x;
+        x = prompt("Digite um caractere: ");
+        if (x >= 0 || x < 0) {
+            alert("Você digitou um número: " + x);
+        } else {
+            switch (x) {
+                case ".":
+                case ":":
+                case "(":
+                case ")":
+                case "!":
+                case "?":
+                case ",":
+                case ";":
+                case "-":
+                case "´":
+                case "^":
+                case "~":
+                    alert("Você digitou uma pontuação: " + x);
+                    break;
+                default:
+                    alert("Você não digitou uma pontuação: " + x);
+            }
+        }
+    </script>
+</body>
+
+</html>

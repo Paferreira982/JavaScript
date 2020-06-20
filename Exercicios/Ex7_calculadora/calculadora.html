@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<link rel="stylesheet" href="style_cal.css" type="text/css">
+
+<body>
+
+    <script>
+        var num1 = 0, num2 = 0, num3 = 0, op = 0,
+            controleOperador = 0, controleBotoes = 0, controleResultado = 0,
+            aux = 0, aux2 = 0, aux3 = 0;
+
+        function preencher(valor) {
+            if (controleResultado == 0) {
+                if (document.getElementById("visor").value == 0) {
+                    document.getElementById("visor").value = valor;
+                } else {
+                    if (controleBotoes == 0) {
+                        document.getElementById("visor").value += valor;
+                    } else {
+                        document.getElementById("visor").value = valor;
+                        controleBotoes = 0;
+                    }
+                }
+            } else {
+                limpar();
+            }
+        }
+
+        function operador(operador) {
+            controleResultado = 0;
+            switch (controleOperador) {
+                case 0:
+                    op = operador;
+                    num1 = parseFloat(document.getElementById("visor").value);
+                    controleBotoes = 1;
+                    controleOperador = 1;
+                    aux = 1;
+                    aux3 = 1;
+                    document.getElementById("primeiroValor").value = num1 + " " + op;
+                    break;
+                case 1:
+                    num2 = parseFloat(document.getElementById("visor").value);
+                    aux = 2;
+                    aux2 = 1;
+                    aux3 = 0;
+                    calcular();
+                    op = operador;
+                    document.getElementById("primeiroValor").value = num3 + " " + op;
+                    break;
+                case 2:
+                    num1 = parseFloat(document.getElementById("visor").value);
+                    num2 = num3;
+                    aux = 2;
+                    aux3 = 0;
+                    calcular();
+                    op = operador;
+                    document.getElementById("primeiroValor").value = num3 + " " + op;
+                    break;
+                default:
+                    document.getElementById("visor").value = "Erro na função operador";
+            }
+        }
+
+        function calcular(valor) {
+            if (valor == 1 && controleOperador != 0 && aux3 == 1) {
+                if (num3 != 0) {
+                    num1 = parseFloat(document.getElementById("visor").value);
+                    num2 = num3;
+                    document.getElementById("primeiroValor").value += " " + num1 + " =";
+                    switch (op) {
+                        case '+':
+                            document.getElementById("visor").value = num1 + num2;
+                            num3 = num1 + num2;
+                            break;
+                        case '-':
+                            document.getElementById("visor").value = num2 - num1;
+                            num3 = num1 - num2;
+                            break;
+                        case '*':
+                            document.getElementById("visor").value = num1 * num2;
+                            num3 = num1 * num2;
+                            break;
+                        case '/':
+                            document.getElementById("visor").value = num2 / num1;
+                            num3 = num1 / num2;
+                            break;
+                        default:
+                            break;
+                    }
+                } else {
+                    num2 = parseFloat(document.getElementById("visor").value);
+                    document.getElementById("primeiroValor").value += " " + num2 + " =";
+                    switch (op) {
+                        case '+':
+                            document.getElementById("visor").value = num1 + num2;
+                            num3 = num1 + num2;
+                            break;
+                        case '-':
+                            document.getElementById("visor").value = num1 - num2;
+                            num3 = num1 - num2;
+                            break;
+                        case '*':
+                            document.getElementById("visor").value = num1 * num2;
+                            num3 = num1 * num2;
+                            break;
+                        case '/':
+                            document.getElementById("visor").value = num1 / num2;
+                            num3 = num1 / num2;
+                            break;
+                        default:
+                            document.getElementById("visor").value = "erro 404";
+                    }
+                }
+                controleResultado = 1;
+                controleBotoes = 0;
+                controleOperador = 0;
+                aux = 0;
+                aux3 = 0;
+            } else {
+                switch (aux) {
+                    case 1:
+                        num2 = parseFloat(document.getElementById("visor").value);
+                        document.getElementById("primeiroValor").value += " " + num2 + " =";
+                        switch (op) {
+                            case '+':
+                                document.getElementById("visor").value = num1 + num2;
+                                num3 = num1 + num2;
+                                break;
+                            case '-':
+                                document.getElementById("visor").value = num1 - num2;
+                                num3 = num1 - num2;
+                                break;
+                            case '*':
+                                document.getElementById("visor").value = num1 * num2;
+                                num3 = num1 * num2;
+                                break;
+                            case '/':
+                                document.getElementById("visor").value = num1 / num2;
+                                num3 = num1 / num2;
+                                break;
+                            default:
+                                document.getElementById("visor").value = "erro na função calcular1";
+                        }
+                        controleResultado = 1;
+                        controleBotoes = 0;
+                        controleOperador = 0;
+                        break;
+                    case 2:
+                        if (aux2 == 1) {
+                            switch (op) {
+                                case '+':
+                                    document.getElementById("visor").value = num1 + num2;
+                                    num3 = num1 + num2;
+                                    break;
+                                case '-':
+                                    document.getElementById("visor").value = num1 - num2;
+                                    num3 = num1 - num2;
+                                    break;
+                                case '*':
+                                    document.getElementById("visor").value = num1 * num2;
+                                    num3 = num1 * num2;
+                                    break;
+                                case '/':
+                                    document.getElementById("visor").value = num1 / num2;
+                                    num3 = num1 / num2;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            document.getElementById("primeiroValor").value = document.getElementById("visor").value + " " + op;
+                            controleBotoes = 1;
+                            controleOperador = 2;
+                            aux2 = 0;
+                        } else {
+                            switch (op) {
+                                case '+':
+                                    document.getElementById("visor").value = num1 + num2;
+                                    num3 = num1 + num2;
+                                    break;
+                                case '-':
+                                    document.getElementById("visor").value = num2 - num1;
+                                    num3 = num2 - num1;
+                                    break;
+                                case '*':
+                                    document.getElementById("visor").value = num1 * num2;
+                                    num3 = num1 * num2;
+                                    break;
+                                case '/':
+                                    document.getElementById("visor").value = num2 / num1;
+                                    num3 = num2 / num1;
+                                    break;
+                                default:
+                                    break;
+                            }
+                            document.getElementById("primeiroValor").value = document.getElementById("visor").value + " " + op;
+                            controleBotoes = 1;
+                            controleOperador = 2;
+                        }
+                        break;
+                    default:
+                        break;
+                }aux = 0;
+                aux3 = 1;
+            } op = 0;
+        }
+
+        function limpar() {
+            document.getElementById("visor").value = 0;
+            document.getElementById("primeiroValor").value = "";
+            controleResultado = 0;
+            controleOperador = 0;
+            controleBotoes = 0;
+            aux = 0;
+            aux2 = 0;
+            aux3 = 0;
+            num1 = 0;
+            num2 = 0;
+            num3 = 0;
+            op = 0;
+        }
+
+        function zero() {
+            if (document.getElementById("visor").value != 0) {
+                document.getElementById("visor").value += 0;
+            }
+        }
+
+    </script>
+
+    <div id="div_main">
+        <input type="text" id="primeiroValor" value="">
+        <input type="text" id="visor" value="0">
+        <input type="button" value="%" id="nada" class="operadores">
+        <input type="button" value="CE" class="operadores">
+        <input type="button" value="C" class="operadores" onclick="limpar()">
+        <input type="button" value="&#8592;" class="operadores">
+        <input type="button" value="&#8900;" id="nada" class="operadores">
+        <input type="button" value="x&#178;" class="operadores">
+        <input type="button" value="&#8730;x" class="operadores">
+        <input type="button" value="&#247;" class="operadores" onclick="operador('/')">
+        <input type="button" value="7" id="nada" class="operadores" onclick="preencher(7)">
+        <input type="button" value="8" class="operadores" onclick="preencher(8)">
+        <input type="button" value="9" class="operadores" onclick="preencher(9)">
+        <input type="button" value="&#215;" class="operadores" onclick="operador('*')">
+        <input type="button" value="4" id="nada" class="operadores" onclick="preencher(4)">
+        <input type="button" value="5" class="operadores" onclick="preencher(5)">
+        <input type="button" value="6" class="operadores" onclick="preencher(6)">
+        <input type="button" value="-" class="operadores" onclick="operador('-')">
+        <input type="button" value="1" id="nada" class="operadores" onclick="preencher(1)">
+        <input type="button" value="2" class="operadores" onclick="preencher(2)">
+        <input type="button" value="3" class="operadores" onclick="preencher(3)">
+        <input type="button" value="+" class="operadores" onclick="operador('+')">
+        <input type="button" value="&#8900;" id="nada" class="operadores">
+        <input type="button" value="0" class="operadores" onclick="zero()">
+        <input type="button" value="," class="operadores" onclick="preencher('.')">
+        <input type="button" value="=" class="operadores" onclick="calcular(1)">
+    </div>
+
+</body>
+
+</html>

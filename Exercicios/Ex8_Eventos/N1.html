@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="Form.css" type="text/css">
+</head>
+
+<body>
+    <button>Cadastrar</button><button>Localizar</button><button>Excluir</button> <br><br>
+    <label for="nome1">Nome: </label> <input type="text" name="nome1" id="nome1" onblur="verificarNome()">
+    <strong id="nome2"></strong> <br>
+    <label for="cpf1">CPF: </label> <input type="number" name="cpf1" id="cpf1" onblur="verificarCPF()">
+    <strong id="cpf2"></strong> <br>
+    <label for="tel1">Telefone: </label> <input type="tel" name="tel1" id="tel1" onblur="verificarTel()">
+    <strong id="tel2"></strong> <br>
+    <label for="idt1">Identidade: </label> <input type="number" name="idt1" id="idt1" onblur="verificarIdt()">
+    <strong id="idt2"></strong> <br>
+    <label for="city1">Cidade: </label> <input type="text" name="city1" id="city1" onblur="verificarCidade()">
+    <strong id="city2"></strong>
+
+    <script>
+        function verificarNome() {
+            var aux = document.getElementById("nome1").value;
+            if (aux == null || aux == "") {
+                document.getElementById("nome2").innerHTML = "Preenchimento obrigatório";
+                document.getElementById("nome2").style.color = "red";
+            } else {
+                document.getElementById("nome2").innerHTML = "";
+            }
+        }
+
+        function verificarCPF() {
+            var aux = document.getElementById("cpf1").value;
+            if (aux == null || aux == "") {
+                document.getElementById("cpf2").innerHTML = "Preenchimento obrigatório";
+                document.getElementById("cpf2").style.color = "red";
+            } else {
+                document.getElementById("cpf2").innerHTML = "";
+            }
+        }
+
+        function verificarTel() {
+            var aux = document.getElementById("tel1").value;
+            if (aux == null || aux == "") {
+                document.getElementById("tel2").innerHTML = "Preenchimento obrigatório";
+                document.getElementById("tel2").style.color = "red";
+            } else {
+                document.getElementById("tel2").innerHTML = "";
+            }
+        }
+
+        function verificarIdt() {
+            var aux = document.getElementById("idt1").value;
+            if (aux == null || aux == "") {
+                document.getElementById("idt2").innerHTML = "Preenchimento obrigatório";
+                document.getElementById("idt2").style.color = "red";
+            } else {
+                document.getElementById("idt2").innerHTML = "";
+            }
+        }
+
+        function verificarCidade() {
+            var aux = document.getElementById("city1").value;
+            if (aux == null || aux == "") {
+                document.getElementById("city2").innerHTML = "Preenchimento obrigatório";
+                document.getElementById("city2").style.color = "red";
+            } else {
+                document.getElementById("city2").innerHTML = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

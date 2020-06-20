@@ -1,0 +1,40 @@
+body{
+    background-color: burlywood;
+    padding: 0px;
+    border: 0px;
+}
+
+#div1{
+    background-color: blanchedalmond;
+    border: 2px black solid;
+    margin-left: 20%;
+    padding: 20px;
+    margin-top: 300px;
+    width: 20%;
+    height: auto;
+}
+
+.font{
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#nome1{
+    margin-left: 20px;
+}
+
+#email1{
+    margin-left: 22px;
+}
+
+#assunto1{
+    margin-left: 5px;
+}
+
+#texto1{
+    margin-left: 24px;
+}
+
+#send1{
+    margin-left: 80%;
+}

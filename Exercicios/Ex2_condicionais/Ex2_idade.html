@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var nome, idade, maior, cidade, uf;
+        nome = prompt("Seu nome?");
+        idade = prompt("Idade?");
+        cidade = prompt("Cidade?");
+        uf = prompt("UF?");
+        if (idade >= 18) {
+            maior = "maior de idade";
+        } else {
+            maior = "menor de idade";
+        }
+        alert("Eu " + nome + ", tenho " + idade + " anos de idade, sou " + maior + " e nasci na cidade de " + cidade + " - " + uf);
+    </script>
+</body>
+
+</html>

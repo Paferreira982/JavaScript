@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link rel="stylesheet" href="style_cal.css" type="text/css">
+
+<body>
+
+    <script>
+        function visor(valor) {
+            if (document.getElementById("resultado").value == 0) {
+                document.getElementById("resultado").value = '';
+                document.getElementById("resultado").value += valor;
+            } else {
+                document.getElementById("resultado").value += valor;
+            }
+        }
+
+        function limpar() {
+            document.getElementById("resultado").value = 0;
+        }
+
+        function zero() {
+            if (document.getElementById("resultado").value != 0) {
+                document.getElementById("resultado").value += 0;
+            }
+        }
+
+    </script>
+
+    <div id="div_main">
+        <input type="text" id="resultado" value="0">
+        <input type="button" value="%" id="nada" class="operadores" onclick="visor('%');">
+        <input type="button" value="CE" class="operadores">
+        <input type="button" value="C" class="operadores" onclick="limpar();">
+        <input type="button" value="&#8592;" class="operadores">
+        <input type="button" value="&#8900;" id="nada" class="operadores">
+        <input type="button" value="x&#178;" class="operadores">
+        <input type="button" value="&#8730;x" class="operadores">
+        <input type="button" value="&#247;" class="operadores" onclick="visor('/');">
+        <input type="button" value="7" id="nada" class="operadores" onclick="visor(7);">
+        <input type="button" value="8" class="operadores" onclick="visor(8);">
+        <input type="button" value="9" class="operadores" onclick="visor(9);">
+        <input type="button" value="&#215;" class="operadores" onclick="visor('*');">
+        <input type="button" value="4" id="nada" class="operadores" onclick="visor(4);">
+        <input type="button" value="5" class="operadores" onclick="visor(5);">
+        <input type="button" value="6" class="operadores" onclick="visor(6);">
+        <input type="button" value="-" class="operadores" onclick="visor('-');">
+        <input type="button" value="1" id="nada" class="operadores" onclick="visor(1);">
+        <input type="button" value="2" class="operadores" onclick="visor(2);">
+        <input type="button" value="3" class="operadores" onclick="visor(3);">
+        <input type="button" value="+" class="operadores" onclick="visor('+');">
+        <input type="button" value="&#8900;" id="nada" class="operadores">
+        <input type="button" value="0" class="operadores" onclick="zero();">
+        <input type="button" value="," class="operadores" onclick="visor('.');">
+        <input type="button" value="=" class="operadores">
+    </div>
+
+</body>
+
+</html>

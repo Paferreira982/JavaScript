@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var n, i = 1, aux = 0, aux2;
+        n = parseInt(prompt("Digite um número inteiro positivo: "));
+        aux2 = n;
+        while (i < aux2) {
+            aux = aux2 - i;
+            n *= aux;
+            i++;
+        } document.write("Seu número " + aux2 + " fatorial é: " + n);
+    </script>
+</body>
+
+</html>

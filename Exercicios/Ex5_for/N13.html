@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var n = parseInt(prompt("Digite um número: "));
+        var aux = 1; aux2 = (n + 1);
+        for (var i = 1; i < n; i++) {
+            aux2 -= i;
+            aux *= aux2;
+            aux2 = (n + 1);
+        }
+        document.write("<br>O resultado: " + aux);
+    </script>
+</body>
+
+</html>

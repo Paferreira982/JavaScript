@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var n, i = 0, contador = 0;
+        n = parseInt(prompt("Digite um número: "));
+        while (i <= n) {
+            if (n % i == 0) {
+                contador += 1;
+            }
+            i++;
+        }
+        if (contador == 2) {
+            document.write("Seu número é primo: " + n);
+        } else {
+            document.write("Seu número não é primo: " + n);
+        }
+    </script>
+</body>
+
+</html>

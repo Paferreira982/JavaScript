@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var anoAtual, mesAtual, diaAtual, anoNasc, mesNasc, diaNasc;
+        var auxAno = 0, auxMes = 0, auxDia = 0, totalDia = 0, totalAno = 0;
+        diaNasc = parseFloat(prompt("Digite o dia de seu nascimento: "));
+        mesNasc = parseFloat(prompt("Digite o mês de seu nascimento: "));
+        anoNasc = parseFloat(prompt("Digite o ano do seu nascimento: "));
+        diaAtual = parseFloat(prompt("Digite o dia atual: "));
+        mesAtual = parseFloat(prompt("Digite o mês atual: "));
+        anoAtual = parseFloat(prompt("Digite o ano atual: "));
+        auxAno = anoAtual - anoNasc;
+        auxMes = ((mesAtual - mesNasc) / 12);
+        auxDia = diaAtual - diaNasc;
+        totalAno = auxAno + auxMes;
+        totalDia = parseInt((totalAno * 365.25) + auxDia);
+        document.write("Seu número total de dias é: " + totalDia + " dias.");
+    </script>
+</body>
+
+</html>
